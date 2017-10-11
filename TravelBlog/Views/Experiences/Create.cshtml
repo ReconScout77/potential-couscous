@@ -1,0 +1,18 @@
+﻿@model TravelBlog.Models.Experience
+
+@{
+    ViewData["Title"] = "Create New Experience";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Title)
+    @Html.EditorFor(model => model.Title)
+    @Html.LabelFor(model => model.Story)
+    @Html.EditorFor(model => model.Story)
+    @Html.LabelFor(model=>model.Location)
+    @Html.DropDownList("LocationId")
+    <input type="submit" value="Create" class="btn btn-info">
+}
+
+<p>@Html.ActionLink("Back to experiences", "Index")</p>

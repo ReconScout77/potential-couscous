@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "1e1934bcbe44d23e5ec3084fdce98c57c1ecb2df"
+    "signature": "51b2112e9e176679525108781bf219e2cfdcdf42"
   },
   "compilationOptions": {
     "defines": [
@@ -26,6 +26,7 @@
           "Microsoft.AspNetCore": "1.1.2",
           "Microsoft.AspNetCore.Mvc": "1.1.2",
           "Microsoft.EntityFrameworkCore": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Design": "1.1.2",
           "Microsoft.NETCore.App": "1.1.2",
           "Pomelo.EntityFrameworkCore.MySql": "1.1.2"
         },
@@ -696,7 +697,21 @@
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.dll": {}
         }
       },
-      "microsoft.entityframeworkcore.relational/1.1.1": {
+      "microsoft.entityframeworkcore.design/1.1.2": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.2",
+          "NETStandard.Library": "1.6.1",
+          "System.Collections.NonGeneric": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Design.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Design.dll": {}
+        }
+      },
+      "microsoft.entityframeworkcore.relational/1.1.2": {
         "dependencies": {
           "Microsoft.CSharp": "4.3.0",
           "Microsoft.EntityFrameworkCore": "1.1.2",
@@ -709,6 +724,18 @@
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.dll": {}
+        }
+      },
+      "microsoft.entityframeworkcore.relational.design/1.1.2": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
         }
       },
       "microsoft.extensions.caching.abstractions/1.1.1": {
@@ -1122,7 +1149,7 @@
       },
       "pomelo.entityframeworkcore.mysql/1.1.2": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.2",
           "MySqlConnector": "0.19.2",
           "NETStandard.Library": "1.6.1",
           "Pomelo.JsonObject": "1.1.1",
@@ -3314,12 +3341,26 @@
       "path": "microsoft.entityframeworkcore/1.1.2",
       "hashPath": "microsoft.entityframeworkcore.1.1.2.nupkg.sha512"
     },
-    "microsoft.entityframeworkcore.relational/1.1.1": {
+    "microsoft.entityframeworkcore.design/1.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wIeIC02b3uFQ0Mgd5yDcpzbGQs383p2BAkpMjNz2xffo9QAFXO1CDavuolRk5I2Rv/iBy9igB91BZoY0tpcMzA==",
-      "path": "microsoft.entityframeworkcore.relational/1.1.1",
-      "hashPath": "microsoft.entityframeworkcore.relational.1.1.1.nupkg.sha512"
+      "sha512": "sha512-TFbj0fFE5BWJptL0BKhYOED0QOqY4VxApeLn8r9q8cINxyEj0XgjORl/a3Cp96CeASE5zsQeyMwaQCBRH+roag==",
+      "path": "microsoft.entityframeworkcore.design/1.1.2",
+      "hashPath": "microsoft.entityframeworkcore.design.1.1.2.nupkg.sha512"
+    },
+    "microsoft.entityframeworkcore.relational/1.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oiPXaIMk8cPbEmtcChzhPzM1ZyEYMoy8sMYWgWfv292Q0e0U2v7CIrtGylrORVZOA4lb9M0gWjbfKPtj7iDbxA==",
+      "path": "microsoft.entityframeworkcore.relational/1.1.2",
+      "hashPath": "microsoft.entityframeworkcore.relational.1.1.2.nupkg.sha512"
+    },
+    "microsoft.entityframeworkcore.relational.design/1.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pu2Jxndzv3slY6Ch9mdqVfL3AFhH5XzM02Rrnf9h5lKoViprYx1O+nNqT3BxmGrPkYadY9OddG2b9+sUO3Xuzw==",
+      "path": "microsoft.entityframeworkcore.relational.design/1.1.2",
+      "hashPath": "microsoft.entityframeworkcore.relational.design.1.1.2.nupkg.sha512"
     },
     "microsoft.extensions.caching.abstractions/1.1.1": {
       "type": "package",

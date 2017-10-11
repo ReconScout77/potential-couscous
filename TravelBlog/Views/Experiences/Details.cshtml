@@ -5,7 +5,9 @@
 }
 
 <h1>@Html.DisplayFor(model => model.Title)</h1>
-@Html.DisplayFor(model => model.Location.City),
-@Html.DisplayFor(model => model.Location.Country)
+<p>@Html.DisplayFor(model => model.Location.City), @Html.DisplayFor(model => model.Location.Country)</p>
 
 <h4>@Html.DisplayFor(model => model.Story)</h4>
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+
