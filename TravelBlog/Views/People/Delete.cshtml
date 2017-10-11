@@ -1,0 +1,13 @@
+﻿@model TravelBlog.Models.Person
+@{
+    ViewData["Title"] = "Delete Person";
+}
+
+<h2>Do you wish to forget @Html.DisplayFor(model => model.Name)?</h2>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Forget" class="btn btn-danger" /> 
+}
+
+<p>@Html.ActionLink("Back to people", "Index")</p>

@@ -1,0 +1,12 @@
+﻿@model TravelBlog.Models.Person
+
+@{
+    ViewData["Title"]="Person Details";
+}
+
+<h2>@Html.DisplayFor(model => model.Name) Details</h2>
+<h4>@Html.DisplayFor(model => model.Experience.Title)</h4>
+<h5>@Html.DisplayNameFor(model => model.Experience.Story):</h5>
+<p>@Html.DisplayFor(model => model.Experience.Story)</p>
+
+<p>@Html.ActionLink("Back to People", "Index")</p>

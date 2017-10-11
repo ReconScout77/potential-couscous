@@ -48,7 +48,7 @@ namespace TravelBlog
 			{
 				routes.MapRoute(
 					name: "default",
-					template: "{controller=Locations}/{action=Index}/{id?}");
+					template: "{controller=Home}/{action=Index}/{id?}");
 			});
 
             app.UseStaticFiles();

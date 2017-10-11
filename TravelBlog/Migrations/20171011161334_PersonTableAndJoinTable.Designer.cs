@@ -8,9 +8,10 @@ using TravelBlog.Models;
 namespace TravelBlog.Migrations
 {
     [DbContext(typeof(TravelBlogContext))]
-    partial class TravelBlogContextModelSnapshot : ModelSnapshot
+    [Migration("20171011161334_PersonTableAndJoinTable")]
+    partial class PersonTableAndJoinTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");
@@ -33,6 +34,24 @@ namespace TravelBlog.Migrations
                     b.ToTable("Experiences");
                 });
 
+            modelBuilder.Entity("TravelBlog.Models.ExperiencePerson", b =>
+                {
+                    b.Property<int>("ExperiencePersonId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("ExperienceId");
+
+                    b.Property<int>("PersonId");
+
+                    b.HasKey("ExperiencePersonId");
+
+                    b.HasIndex("ExperienceId");
+
+                    b.HasIndex("PersonId");
+
+                    b.ToTable("ExperiencePeople");
+                });
+
             modelBuilder.Entity("TravelBlog.Models.Location", b =>
                 {
                     b.Property<int>("LocationId")
@@ -52,13 +71,9 @@ namespace TravelBlog.Migrations
                     b.Property<int>("PersonId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ExperienceId");
-
                     b.Property<string>("Name");
 
                     b.HasKey("PersonId");
-
-                    b.HasIndex("ExperienceId");
 
                     b.ToTable("People");
                 });
@@ -71,11 +86,16 @@ namespace TravelBlog.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("TravelBlog.Models.Person", b =>
+            modelBuilder.Entity("TravelBlog.Models.ExperiencePerson", b =>
                 {
                     b.HasOne("TravelBlog.Models.Experience", "Experience")
-                        .WithMany("People")
+                        .WithMany("ExperiencePeople")
                         .HasForeignKey("ExperienceId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("TravelBlog.Models.Person", "Person")
+                        .WithMany("ExperiencePeople")
+                        .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
         }

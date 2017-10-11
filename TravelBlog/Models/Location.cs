@@ -11,12 +11,6 @@ namespace TravelBlog.Models
 	[Table("Locations")]
     public class Location 
 	{
-
-        public Location()
-        {
-            this.Experiences = new HashSet<Experience>();
-        }
-
 		[Key]
 		public int LocationId { get; set; }
 		public string Country { get; set; }

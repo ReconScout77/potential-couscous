@@ -30,4 +30,24 @@
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.2" />
 	</ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Models\ExperiencePeople.cs" />
+    <Compile Remove="Migrations\20171011002008_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20171011002008_Initial.cs" />
+    <Compile Remove="Migrations\20171011010952_NameColumnToLocation.Designer.cs" />
+    <Compile Remove="Migrations\20171011010952_NameColumnToLocation.cs" />
+    <Compile Remove="Migrations\20171011011456_RemoveNameColumnFromLocationTable.Designer.cs" />
+    <Compile Remove="Migrations\20171011011456_RemoveNameColumnFromLocationTable.cs" />
+    <Compile Remove="Migrations\20171011161334_PersonTableAndJoinTable.Designer.cs" />
+    <Compile Remove="Migrations\20171011161334_PersonTableAndJoinTable.cs" />
+    <Compile Remove="Migrations\TravelBlogContextModelSnapshot.cs" />
+    <Compile Remove="Migrations\20171011205104_OneToManyPeopleExperiences.Designer.cs" />
+    <Compile Remove="Migrations\20171011205104_OneToManyPeopleExperiences.cs" />
+    <Compile Remove="Migrations\20171011205203_PeopleExperiencesOneToMany.Designer.cs" />
+    <Compile Remove="Migrations\20171011205203_PeopleExperiencesOneToMany.cs" />
+    <Compile Remove="Migrations\20171011211614_ColumnToPeopleTable.Designer.cs" />
+    <Compile Remove="Migrations\20171011211614_ColumnToPeopleTable.cs" />
+    <Compile Remove="Migrations\20171011211846_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20171011211846_Initial.cs" />
+  </ItemGroup>
 </Project>

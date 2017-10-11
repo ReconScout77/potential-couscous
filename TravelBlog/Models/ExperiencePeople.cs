@@ -6,16 +6,14 @@ using System.Collections.Generic;
 
 namespace TravelBlog.Models
 {
-    [Table("People")]
-    public class Person
+    [Table("ExperiencePeople")]
+    public class ExperiencePerson
     {
-
         [Key]
-        public int PersonId { get; set; }
-        public string Name { get; set; }
-
         public int ExperienceId { get; set; }
         public virtual Experience Experience { get; set; }
 
+        public int PersonId { get; set;  }
+        public virtual Person Person { get; set; }
     }
 }

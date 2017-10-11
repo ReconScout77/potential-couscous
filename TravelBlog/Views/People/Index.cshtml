@@ -1,0 +1,20 @@
+﻿@model IEnumerable<TravelBlog.Models.Person>
+@{
+    ViewData["Title"] = "People";
+}
+
+<h2>People</h2>
+
+<p>@Html.ActionLink("Add new person", "Create", new { @class="btn btn-default" })</p>
+
+<ul>
+    @foreach(var listPerson in Model)
+	{
+	    <li>
+            @Html.DisplayFor(model => listPerson.Name)
+		    | @Html.ActionLink("Edit", "Edit", new { id = listPerson.PersonId })
+		    | @Html.ActionLink("Delete", "Delete", new { id = listPerson.PersonId })
+		    | @Html.ActionLink("Details", "Details", new { id = listPerson.PersonId })
+		</li>
+	}
+</ul>

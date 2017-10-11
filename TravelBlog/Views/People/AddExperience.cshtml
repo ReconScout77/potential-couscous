@@ -1,0 +1,18 @@
+﻿@model TravelBlog.Models.Person
+
+@{
+    ViewData["Title"]="Add Experience to Person";
+}
+
+<h2>Add an Experience to this Person</h2>
+<h4>@Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.PersonId)
+    @Html.LabelFor(model => model.Title)
+    @Html.DropDownList(model => model.Title)
+    <input type="submit" value="Add Experience" class="btn btn-success" />  
+}
+
+<p>@Html.ActionLink("Back to People", "Index")</p>

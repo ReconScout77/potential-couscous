@@ -4,10 +4,20 @@
     ViewData["Title"] = "Details";
 }
 
+@Html.DisplayFor(model => model.ExperienceId)
 <h1>@Html.DisplayFor(model => model.Title)</h1>
 <p>@Html.DisplayFor(model => model.Location.City), @Html.DisplayFor(model => model.Location.Country)</p>
 
 <h4>@Html.DisplayFor(model => model.Story)</h4>
+<h4>Who was there:</h4>
 
+<ul>
+@foreach(var person in Model.People)
+{
+    <li>@Html.DisplayFor(model => person.Name)</li>
+}
+</ul>
+
+<p>@Html.ActionLink("Add a person to this story", "Create", "People", new { id = experience.ExperienceId })</p>
 <p>@Html.ActionLink("Back to list", "Index")</p>
 

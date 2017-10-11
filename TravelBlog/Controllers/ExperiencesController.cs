@@ -8,6 +8,7 @@ using TravelBlog.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Diagnostics.Contracts;
 
 namespace TravelBlog.Controllers
 {
@@ -40,6 +41,7 @@ namespace TravelBlog.Controllers
         public IActionResult Details(int id)
         {
             var thisExperience = db.Experiences.Include(experience => experience.Location)
+                                   .Include(experience => experience.People)
                                    .FirstOrDefault(experience => experience.ExperienceId == id);
             return View(thisExperience);
         }
