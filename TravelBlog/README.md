@@ -51,3 +51,34 @@ _This is dedicated web site to post our travel experiences all over the world._
 Copyright (c) 2017 **_Kaili Nishihira and Michael Woldemedihin**
 
 *Licensed under the [MIT License](https://opensource.org/licenses/MIT)*
+
+
+### ASP.Net
+#### Add Packages
+* Microsoft.AspNetCore.Mvc - Version 1.1.2
+* Microsoft.EntityFrameworkCore - Version 1.1.2
+* Pomelo.EntityFrameworkCore.MySql - Version 1.1.2
+* Microsoft.AspNetCore.StaticFiles - Version 1.1.2
+* Microsoft.AspNetCore - Version 1.1.2
+
+### Migration
+#### Add Packages
+* Microsoft.EntityFrameworkCore.Design - Version 1.1.2
+
+#### Add to .csproj
+```
+<Item Group>
+  <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0" />
+</Item Group>
+```
+If missing, add:
+```
+<Item Group>
+  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.2" />
+</Item Group>
+```
+
+#### Commands in terminal or VS Package Console (Windows only)
+* `dotnet restore` (keep running restore if you come across errors)
+* `dotnet ef migrations add Initial` (Initial can be any name of your migration, like a commit message)
+* `dotnet database update`

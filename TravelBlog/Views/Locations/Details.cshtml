@@ -6,11 +6,8 @@
 
 <h2>Location Details</h2>
 
-<p>@Html.DisplayNameFor(model => model.Country): @Html.DisplayFor(model => model.Country)</p>
-<p>
-	@Html.DisplayNameFor(model => model.City): @Html.DisplayFor(model => model.City)
-   
-</p>
+<h4>@Html.DisplayFor(model => model.City), @Html.DisplayFor(model => model.Country)</h4>
+
 <p> @Html.ActionLink("Edit", "Edit", new { id = Model.LocationId })
     | @Html.ActionLink("Delete", "Delete", new { id = Model.LocationId })</p>
 

@@ -51,6 +51,8 @@ namespace TravelBlog
 					template: "{controller=Locations}/{action=Index}/{id?}");
 			});
 
+            app.UseStaticFiles();
+
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
