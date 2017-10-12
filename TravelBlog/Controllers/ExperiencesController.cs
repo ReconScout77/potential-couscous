@@ -38,6 +38,20 @@ namespace TravelBlog.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult AddExperience(int locationId)
+        {
+            ViewBag.LocationId = db.Locations.FirstOrDefault(experience => experience.LocationId == locationId);
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddExperience(Experience experience)
+        {
+            db.Experiences.Add(experience);
+            db.SaveChanges();
+            return RedirectToAction("Details", "Locations", new{ id = experience.LocationId});
+        }
+
         public IActionResult Details(int id)
         {
             var thisExperience = db.Experiences.Include(experience => experience.Location)

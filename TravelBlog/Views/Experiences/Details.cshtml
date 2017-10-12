@@ -8,12 +8,13 @@
 <h3>@Html.DisplayFor(model => model.Location.City), @Html.DisplayFor(model => model.Location.Country)</h3>
 
 <h4>@Html.DisplayFor(model => model.Story)</h4>
+<p>@Html.DisplayFor(model => model.EarthTime.Month)/@Html.DisplayFor(model => model.EarthTime.Day)/@Html.DisplayFor(model => model.EarthTime.Year) </p>
 <h4>Who was there:</h4>
 
 <ul>
 @foreach(var person in Model.People)
 {
-    <li>@Html.DisplayFor(model => person.Name)</li>
+    <li>@Html.ActionLink((string)person.Name, "Details", "People", new{ id = person.PersonId})</li>
 }
 </ul>
 

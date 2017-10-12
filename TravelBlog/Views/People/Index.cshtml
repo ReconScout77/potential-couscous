@@ -13,9 +13,9 @@
                     <blockquote class="card-blockquote">
                         <h5>@Html.DisplayFor(model => listPerson.Name)</h5>
                         <footer>
-                            @Html.ActionLink("Edit", "Edit", new { id = listPerson.PersonId })
+                            @Html.ActionLink("Details", "Details", new { id = listPerson.PersonId })
+                            | @Html.ActionLink("Edit", "Edit", new { id = listPerson.PersonId })
                             | @Html.ActionLink("Delete", "Delete", new { id = listPerson.PersonId })
-                            | @Html.ActionLink("Details", "Details", new { id = listPerson.PersonId })
                         </footer>
                      </blockquote>
                 </div>

@@ -8,9 +8,10 @@ using TravelBlog.Models;
 namespace TravelBlog.Migrations
 {
     [DbContext(typeof(TravelBlogContext))]
-    partial class TravelBlogContextModelSnapshot : ModelSnapshot
+    [Migration("20171012181919_AddDateTime")]
+    partial class AddDateTime
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2");

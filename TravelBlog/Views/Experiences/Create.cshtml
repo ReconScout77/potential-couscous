@@ -7,14 +7,17 @@
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Title)
+    <label>@Html.LabelFor(model => model.Title):</label>
     @Html.TextBoxFor(model => model.Title)
     <br/>
-    @Html.LabelFor(model => model.Story)
+    <label>@Html.LabelFor(model => model.Story):</label>
     @Html.TextAreaFor(model => model.Story)
     <br/>
-    @Html.LabelFor(model => model.Location)
+    <label>@Html.LabelFor(model => model.Location):</label>
     @Html.DropDownList("LocationId")
+    <br />
+    <label>Date:</label>
+    @Html.TextBoxFor(model => model.EarthTime, new { type = "date" })
     <br />
     <input type="submit" value="Create" class="btn btn-info">
 }

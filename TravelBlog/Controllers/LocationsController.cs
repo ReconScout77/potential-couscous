@@ -15,7 +15,10 @@ namespace TravelBlog.Controllers
         private TravelBlogContext db = new TravelBlogContext();
         public IActionResult Index()
         {
-            return View(db.Locations.ToList());
+            var locationList = db.Locations
+                                 .OrderBy(x=>x.City)
+                                 .ToList();
+            return View(locationList);
         }
         public IActionResult Details(int id)
         {

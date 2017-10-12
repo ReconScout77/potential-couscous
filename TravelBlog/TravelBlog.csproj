@@ -49,5 +49,9 @@
     <Compile Remove="Migrations\20171011211614_ColumnToPeopleTable.cs" />
     <Compile Remove="Migrations\20171011211846_Initial.Designer.cs" />
     <Compile Remove="Migrations\20171011211846_Initial.cs" />
+    <Compile Remove="Migrations\20171011212416_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20171011212416_Initial.cs" />
+    <Compile Remove="Migrations\20171012181919_AddDateTime.Designer.cs" />
+    <Compile Remove="Migrations\20171012181919_AddDateTime.cs" />
   </ItemGroup>
 </Project>

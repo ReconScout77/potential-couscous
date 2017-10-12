@@ -13,6 +13,7 @@ namespace TravelBlog.Models
         public int ExperienceId { get; set; }
         public string Title { get; set; }
         public string Story { get; set; }
+        public DateTime EarthTime { get; set; }
 
 
         public int LocationId { get; set; }

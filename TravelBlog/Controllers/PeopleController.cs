@@ -17,7 +17,10 @@ namespace TravelBlog.Controllers
 
         public IActionResult Index()
         {
-            return View(db.People.ToList());
+            var peopleList = db.People
+                               .OrderBy(x => x.Name)
+                               .ToList();
+            return View(peopleList);
         }
 
         public IActionResult Details(int id)
