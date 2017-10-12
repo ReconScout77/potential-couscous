@@ -8,12 +8,29 @@
 <h2>Add a New Location</h2>
 
 @using (Html.BeginForm())
-{
-    @Html.LabelFor(model => model.Country)
-    @Html.TextBoxFor(model => model.Country)
-    @Html.LabelFor(model => model.City)
-    @Html.TextBoxFor(model => model.City)
-    <input type="submit" value="Add new location" class="btn btn-default" />
+{   <div class="card"> 
+    	<div class="card-block">
+            <div class="form-group row"> 
+                <label class="col-2 col-form-label">@Html.LabelFor(model => model.Country)</label>        
+                <div class=""col-10">
+        		    @Html.TextBoxFor(model => model.Country)
+                </div>
+        	</div>
+            <div class="form-group row"> 
+                <label class="col-2 col-form-label">@Html.LabelFor(model => model.City)</label>        
+                <div class=""col-10">
+                     @Html.TextBoxFor(model => model.City)
+                </div>
+            </div> 
+        	<div class="row">
+        		<div class="col-md-2">
+        			<input type="submit" value="Add new location" class="btn btn-default" />
+        		</div>
+                <div class="col-md-10">
+        		</div>
+        	</div>
+    	</div>
+	</div>
 }
 
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<p class="back">@Html.ActionLink("Back to Locations", "Index")</p>

@@ -5,8 +5,8 @@
     ViewData["Title"] = "Experiences";
  }
 
- <h1>Experiences</h1>
- <h3>@Html.ActionLink("Create new experience", "Create")</h3>
+ <h2>Experiences</2>
+ <h4>@Html.ActionLink("Create new experience", "Create")</h4>
 
 
     
@@ -16,7 +16,7 @@
         <div class="card card-outline-primary mb-3 text-center">    
             <div class="card-block">
 		        <blockquote class="card-blockquote">
-                    <p>@Html.DisplayFor(model => experience.Title)</p>
+                    <h5>@Html.DisplayFor(model => experience.Title)</h5>
                     <p>@Html.DisplayFor(model => experience.Location.City), 
                     @Html.DisplayFor(model => experience.Location.Country)</p>
                     <footer>

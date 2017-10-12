@@ -5,21 +5,25 @@
    
 }
 
-<h1>Locations</h1>
-<p>@Html.ActionLink("Add new location", "Create", new { @class="btn btn-default" })</p>
+<h2>Locations</h2>
+<h4>@Html.ActionLink("Add new location", "Create", new { @class="btn btn-default" })</h4>
 <!--<h4>@Html.DisplayNameFor(model => model.City)</h4>>
 -->
-<ul>
+
     @foreach(var listLocation in Model)
 	{
-        <li>
-		    @Html.DisplayFor(model => listLocation.City)
-		    @Html.ActionLink("Details", "Details", new { id = listLocation.LocationId })
-            | @Html.ActionLink("Edit", "Edit", new { id = listLocation.LocationId })
-            | @Html.ActionLink("Delete", "Delete", new { id = listLocation.LocationId })
-		
-	    </li>
+        <div class="card card-outline-primary mb-3 text-center">    
+            <div class="card-block">
+                <blockquote class="card-blockquote">
+                    <h5>@Html.DisplayFor(model => listLocation.City)</h5>
+                    <footer>
+                        @Html.ActionLink("Details", "Details", new { id = listLocation.LocationId })
+                        | @Html.ActionLink("Edit", "Edit", new { id = listLocation.LocationId })
+                        | @Html.ActionLink("Delete", "Delete", new { id = listLocation.LocationId })
+                    </footer>
+                 </blockquote>
+            </div>
+        </div>
 	}
-</ul>
 
 
