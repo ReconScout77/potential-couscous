@@ -8,18 +8,24 @@
  <h1>Experiences</h1>
  <h3>@Html.ActionLink("Create new experience", "Create")</h3>
 
-<ul>
+
+    
 	@foreach(var experience in Model)
 	{
-	    <li>@Html.DisplayNameFor(model => experience.Title): 
-	        @Html.DisplayFor(model => experience.Title) -
-	        @Html.DisplayFor(model => experience.Location.City), 
-		    @Html.DisplayFor(model => experience.Location.Country)
-		    @Html.ActionLink("Details", "Details", new{id = experience.ExperienceId})
-		    | @Html.ActionLink("Edit", "Edit", new{id = experience.ExperienceId})
-		    | @Html.ActionLink("Delete", "Delete", new{id = experience.ExperienceId})
-	    </li>
 
-	
+        <div class="card card-outline-primary mb-3 text-center">    
+            <div class="card-block">
+		        <blockquote class="card-blockquote">
+                    <p>@Html.DisplayFor(model => experience.Title)</p>
+                    <p>@Html.DisplayFor(model => experience.Location.City), 
+                    @Html.DisplayFor(model => experience.Location.Country)</p>
+                    <footer>
+				        @Html.ActionLink("Details", "Details", new{id = experience.ExperienceId})
+                        | @Html.ActionLink("Edit", "Edit", new{id = experience.ExperienceId})
+                        | @Html.ActionLink("Delete", "Delete", new{id = experience.ExperienceId})
+			        </footer>
+                 </blockquote>
+            </div>
+        </div>
 	}
-</ul>
+	

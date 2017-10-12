@@ -26,10 +26,11 @@ namespace TravelBlog.Controllers
                                .FirstOrDefault(person => person.PersonId == id);
             return View(thisPerson);
         }
-        public IActionResult Create(int ExperienceId)
+        public IActionResult Create(int experienceId)
         {
-            var thisExperience = db.Experiences.FirstOrDefault(experiences => experiences.ExperienceId == ExperienceId);
-            return View(thisExperience);
+            var thisExperience = db.Experiences.FirstOrDefault(experiences => experiences.ExperienceId == experienceId);
+            ViewBag.CurrentExperience = thisExperience;
+            return View();
         }
 
         [HttpPost]
@@ -37,7 +38,7 @@ namespace TravelBlog.Controllers
         {
             db.People.Add(person);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", "Experiences", new{id = person.ExperienceId});
         }
 
         public IActionResult Edit(int id)

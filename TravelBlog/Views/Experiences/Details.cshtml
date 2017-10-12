@@ -4,7 +4,6 @@
     ViewData["Title"] = "Details";
 }
 
-@Html.DisplayFor(model => model.ExperienceId)
 <h1>@Html.DisplayFor(model => model.Title)</h1>
 <p>@Html.DisplayFor(model => model.Location.City), @Html.DisplayFor(model => model.Location.Country)</p>
 
@@ -18,6 +17,6 @@
 }
 </ul>
 
-<p>@Html.ActionLink("Add a person to this story", "Create", "People", new { id = experience.ExperienceId })</p>
+<p>@Html.ActionLink("Add a person to this story", "Create", "People", new{ experienceId = Model.ExperienceId })</p>
 <p>@Html.ActionLink("Back to list", "Index")</p>
 

@@ -8,7 +8,7 @@
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.ExperienceId)
+    @Html.HiddenFor(model => model.ExperienceId, new{@value = ViewBag.CurrentExperience.ExperienceId})
     @Html.LabelFor(model => model.Name)
     @Html.TextBoxFor(model => model.Name)
 

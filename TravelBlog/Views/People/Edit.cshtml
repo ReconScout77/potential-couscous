@@ -8,6 +8,7 @@
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.PersonId)
+    @Html.HiddenFor(model => model.ExperienceId)
     @Html.LabelFor(model => model.Name)
     @Html.EditorFor(model => model.Name)
     <input type="submit" value="Edit person" class="btn btn-success" /> 

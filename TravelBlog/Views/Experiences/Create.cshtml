@@ -3,15 +3,19 @@
 @{
     ViewData["Title"] = "Create New Experience";
 }
+<h2>Add a New Experience</h2>
 
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Title)
-    @Html.EditorFor(model => model.Title)
+    @Html.TextBoxFor(model => model.Title)
+    <br/>
     @Html.LabelFor(model => model.Story)
-    @Html.EditorFor(model => model.Story)
-    @Html.LabelFor(model=>model.Location)
+    @Html.TextAreaFor(model => model.Story)
+    <br/>
+    @Html.LabelFor(model => model.Location)
     @Html.DropDownList("LocationId")
+    <br />
     <input type="submit" value="Create" class="btn btn-info">
 }
 
