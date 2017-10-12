@@ -4,11 +4,13 @@
     ViewData["Title"] = "Deletion";
 }
 
-<h1>Are you sure you wish to forget?</h1>
+<h2>Are you sure you wish to forget?</h2>
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.ExperienceId)
-    <input type="submit" value="Delete" class="btn btn-danger"/>
+    <div class="d-flex justify-content-center">
+        <input type="submit" value="Delete" class="btn btn-danger"/>
+    </div>
 }
 
-@Html.ActionLink("Back to experiences", "Index")
+<p class="back">@Html.ActionLink("Back to experiences", "Index")</p>

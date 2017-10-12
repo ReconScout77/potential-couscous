@@ -3,15 +3,24 @@
     ViewData["Title"] = "Edit Person";
 }
 
-<h2>Edit person</h2>
+<h2>Edit @Html.DisplayFor(model => model.Name)</h2>
 
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.PersonId)
     @Html.HiddenFor(model => model.ExperienceId)
-    @Html.LabelFor(model => model.Name)
-    @Html.EditorFor(model => model.Name)
-    <input type="submit" value="Edit person" class="btn btn-success" /> 
+
+    <div class="card">
+        <div class="card-block">
+            <div class="row">   
+                <label class="col-md-2">@Html.LabelFor(model => model.Name):</label>
+    			<div class="col-md-10">
+                     @Html.TextBoxFor(model => model.Name, new {@class="form-control"})
+    			</div>
+		    </div>
+		 <input type="submit" value="Edit person" class="btn btn-success" />
+	    </div>
+    </div>
 }
 
-<p>@Html.ActionLink("Back to people", "Index")</p>
+<p class="back">@Html.ActionLink("Back to people", "Index")</p>

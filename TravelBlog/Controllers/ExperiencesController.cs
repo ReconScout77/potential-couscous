@@ -80,6 +80,7 @@ namespace TravelBlog.Controllers
         {
             var thisExperience = db.Experiences.Include(experience => experience.Location)
                                    .FirstOrDefault(experience => experience.ExperienceId == id);
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "City");
             return View(thisExperience);
         }
 

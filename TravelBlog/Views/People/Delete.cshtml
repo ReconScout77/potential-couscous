@@ -7,7 +7,9 @@
 
 @using (Html.BeginForm())
 {
-    <input type="submit" value="Forget" class="btn btn-danger" /> 
+    <div class="d-flex justify-content-center">
+        <input type="submit" value="Forget" class="btn btn-danger" /> 
+    </div> 
 }
 
-<p>@Html.ActionLink("Back to people", "Index")</p>
+<p class="back">@Html.ActionLink("Back to people", "Index")</p>

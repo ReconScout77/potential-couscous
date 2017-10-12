@@ -5,19 +5,32 @@
 }
 
 
-<h2>Edit Location</h2>
+<h2>Edit @Html.DisplayFor(model => model.City), @Html.DisplayFor(model => model.Country)</h2>
 
-<h4>Edit this location: @Html.DisplayFor(model => model.Country), @Html.DisplayFor(model => model.City)</h4>
 
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.LocationId)
-    @Html.LabelFor(model => model.Country)
-    @Html.EditorFor(model => model.Country)
-    @Html.LabelFor(model => model.City)
-    @Html.EditorFor(model => model.City)
+   
 
-    <input type="Submit" value="Save" class="btn btn-default" />
+    <div class="card">
+        <div class="card-block">
+            <div class="row form">
+                <label class="col-md-2">@Html.LabelFor(model => model.Country):</label>
+			    <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.Country, new {@class="form-control"})
+			    </div>
+		    </div>
+		    <div class="row">
+                <label class="col-md-2">@Html.LabelFor(model => model.City):</label>
+                <div class="col-md-10">
+                   @Html.TextBoxFor(model => model.City, new {@class="form-control"})
+                </div>
+            </div>
+		    <input type="Submit" value="Save" class="btn btn-info" />
+	    </div>
+    </div>
+
 }
 
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<p class="back">@Html.ActionLink("Back to list", "Index")</p>

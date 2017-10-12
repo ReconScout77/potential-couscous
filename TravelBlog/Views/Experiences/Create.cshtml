@@ -7,19 +7,38 @@
 
 @using (Html.BeginForm())
 {
-    <label>@Html.LabelFor(model => model.Title):</label>
-    @Html.TextBoxFor(model => model.Title)
-    <br/>
-    <label>@Html.LabelFor(model => model.Story):</label>
-    @Html.TextAreaFor(model => model.Story)
-    <br/>
-    <label>@Html.LabelFor(model => model.Location):</label>
-    @Html.DropDownList("LocationId")
-    <br />
-    <label>Date:</label>
-    @Html.TextBoxFor(model => model.EarthTime, new { type = "date" })
-    <br />
-    <input type="submit" value="Create" class="btn btn-info">
+    <div class="card">
+        <div class="card-block">
+		    <div class="d-flex justify-content-around">
+			    <div class="p-2">
+		            <label>@Html.LabelFor(model => model.Location):</label>
+                    @Html.DropDownList("LocationId")
+				</div>
+			    <div class="p-2"> 
+                    <label>Date:</label>
+                    @Html.TextBoxFor(model => model.EarthTime, new { type = "date" })
+				</div>
+		    </div>
+		    <div class="d-flex justify-content-center">
+			    <div class="p-2">
+				    <div class="d-flex">
+                        <label class="p-2">@Html.LabelFor(model => model.Title):</label>
+                        <div class="p-2">@Html.TextBoxFor(model => model.Title, new {@class="form-control"})</div>
+					</div>
+                </div>
+                <div class="p-2"> </div>
+			</div> 
+            <div class="d-flex justify-content-center"> 
+                <label class="p-2">@Html.LabelFor(model => model.Story):</label>
+			    <div class="p-2"> 
+                    @Html.TextAreaFor(model => model.Story, new { rows="10", cols="80"})
+				</div>
+            </div>
+
+            <input type="submit" value="Create" class="btn btn-info">
+	    </div> 
+    </div> 
+
 }
 
-<p>@Html.ActionLink("Back to experiences", "Index")</p>
+<p class="back">@Html.ActionLink("Back to experiences", "Index")</p>
